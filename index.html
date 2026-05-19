@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
 
-   <style>
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -14,6 +14,7 @@
       color: #333;
     }
 
+    /* HERO */
     header {
       background: rgba(26, 26, 66, 0.781);
       color: white;
@@ -22,158 +23,223 @@
     }
 
     header img {
-      width: 400px;
-      height: 400px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       object-fit: cover;
       margin-top: 15px;
       border: 3px solid white;
     }
 
-     section {
+    /* SECTION BASE */
+    section {
       padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 20px auto;
       background: white;
+      border-radius: 12px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ABOUT ME */
+    .about-card {
+      background: linear-gradient(135deg, #ffffff, #f7f7f7);
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 750px;
+      margin: auto;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .about-card p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* TECH SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       margin-top: 20px;
-      border-radius: 10px;
     }
 
-     /* Projects */
-    #projects{
-      padding:60px 20px;
+    /* CARDS (used for skills + projects consistency) */
+    .card {
+      background: rgba(209, 48, 48, 0.781);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      transition: 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
-      margin-top:40px;
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
     }
 
-    .project-card{
-      background:rgba(209, 48, 48, 0.781);
-      border:1px solid rgba(255,255,255,0.15);
-      border-radius:15px;
-      padding:20px;
-      text-align:center;
-      backdrop-filter:blur(10px);
-      transition:0.3s;
+    .card h3 {
+      color: black;
+      margin-bottom: 10px;
     }
 
-    .project-card:hover{
-      transform:translateY(-10px) scale(1.03);
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    .project-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      border-radius:12px;
-      margin-bottom:20px;
+    /* PROJECTS */
+    #projects {
+      padding: 60px 20px;
     }
 
-    .project-content h3{
-      font-size:26px;
-      margin-bottom:15px;
-      color:#000000;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .project-content p{
-      color:white;
-      line-height:1.6;
-      margin-bottom:20px;
+    .project-card {
+      background: rgba(209, 48, 48, 0.781);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s ease;
     }
 
-    .tags{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
     }
 
-    .tag{
-      background:rgba(0, 0, 0, 0.15);
-      border:1px solid rgba(0, 0, 0, 0.3);
-      color:#000000;
-      padding:8px 14px;
-      border-radius:20px;
-      font-size:14px;
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
 
+    .project-content h3 {
+      color: black;
+      margin-bottom: 10px;
+    }
 
-</style>
+    .project-content p {
+      color: white;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .tag {
+      background: rgba(0,0,0,0.15);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: black;
+    }
+
+    /* CONTACT */
+    a {
+      color: #0077cc;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header>
-    <img src="assets/profile.png" alt="Profile png">
-    <h1>Mark Anthony E. Ramirez </h1>
-    <p>Aspiring Web Developer </p>
+    <img src="assets/profile.png" alt="Profile">
+    <h1>Mark Anthony E. Ramirez</h1>
+    <p>Aspiring Web Developer</p>
   </header>
-<section>  
-<h2>About Me</h2>
-    <p>
-      I am a student passionate about web development and design.<br>
-      I enjoy creating simple, clean, and functional websites.<br>
-      My goal is to become a web developer and build impactful applications.
-    </p>
-</section>
 
-<section>
+  <!-- ABOUT ME -->
+  <section>
+    <h2>About Me</h2>
+    <div class="about-card">
+      <p>
+        I am a student passionate about web development and design.
+        I enjoy creating simple, clean, and functional websites.
+        My goal is to become a web developer and build impactful applications.
+      </p>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
     <h2>Technical Skills</h2>
 
-    <div class="projects">
+    <div class="skills-grid">
+
+      <div class="card">
+        <h3>HTML</h3>
+        <p>Build the content and structure of a webpage.</p>
+      </div>
 
       <div class="card">
         <h3>CSS</h3>
-        <p>Learning How to Design, Arrange, and Improve the Look of a Website.</p>
-       
-      </div>
-       <div class="card">
-        <h3>HTML</h3>
-        <p>Build the Content and Structure of a Webpage.</p>
-       
+        <p>Design and improve the look and layout of websites.</p>
       </div>
 
-     <div class="card">
-        <h3>MySQL</h3>
-        <p>Organizing and Managing Databases.</p>
-        
-      </div>
-
-       <div class="card">
+      <div class="card">
         <h3>JavaScript</h3>
-        <p>Make Websites Interactive, Smart, and Responsive to Users.</p>
-        
+        <p>Make websites interactive and dynamic.</p>
       </div>
 
       <div class="card">
         <h3>Java</h3>
-        <p>Build Apps, Systems, and Large Software Programs.</p>
-        
+        <p>Build applications and backend systems.</p>
       </div>
 
-</section>
- 
- <!-- Projects -->
-  <section id="projects">
+      <div class="card">
+        <h3>MySQL</h3>
+        <p>Manage and organize databases efficiently.</p>
+      </div>
 
-    <h2 class="section-title">Featured Projects</h2>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
 
     <div class="projects-grid">
 
       <div class="project-card">
-        <img src="assets/" alt="1st column">
-
+        <img src="assets/project1.png" alt="Project 1">
         <div class="project-content">
-          <h3></h3>
-          <p>
-            
-          </p>
-
+          <h3>Portfolio Website</h3>
+          <p>My personal responsive portfolio site.</p>
           <div class="tags">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
@@ -182,44 +248,36 @@
       </div>
 
       <div class="project-card">
-        <img src="assets/" alt="2nd column">
-
+        <img src="assets/project2.png" alt="Project 2">
         <div class="project-content">
-          <h3></h3>
-          <p>
-            
-          </p>
-
+          <h3>To-Do App</h3>
+          <p>Task manager built with JavaScript.</p>
           <div class="tags">
-            <span class="tag">JAVA</span>
-            <span class="tag">MySQL</span>
+            <span class="tag">JavaScript</span>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="assets/" alt="3rd column">
-
+        <img src="assets/project3.png" alt="Project 3">
         <div class="project-content">
-          <h3></h3>
-          <p>
-            
-          </p>
-
+          <h3>Database System</h3>
+          <p>Simple system using Java and MySQL.</p>
           <div class="tags">
-            <span class="tag">JAVA</span>
+            <span class="tag">Java</span>
             <span class="tag">MySQL</span>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 4. Contact -->
+  <!-- CONTACT -->
   <section>
     <h2>Contact</h2>
     <p>Email: johndoe@email.com</p>
-    <p>GitHub: <a href="https://github.com/">github.com/yourusername</a></p>
+    <p>GitHub: <a href="#">github.com/yourusername</a></p>
     <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
   </section>
 
